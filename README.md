@@ -53,6 +53,31 @@ $ diff merkle-proof.generated.json merkle_tree.json
 
 You will not see any differences!
 
+# Amended Distribution: Verify output from Excel workbook
+
+1. Go to [Workbook](https://docs.google.com/spreadsheets/d/15DrnIMgw_lICkPijL2fT9iNimzp-aJgn07Czylsi6vA/edit?pli=1#gid=1330145834) and download it as an xlsx file
+2. Move this to root folder of this project and keep name as ‘Retro-Query-Fork.xlsx’
+3. Generate the 'new_dist_list.csv' file: 
+```sh
+$ ts-node ./scripts/create_dist.ts 
+```
+4. Generate friendly json results:
+```sh
+$ ts-node ./scripts/parse_csv.ts -i new_dist_list.csv > dist_results.json
+```
+5. Generate merle proof blob:
+```sh
+$ ts-node ./scripts/generate-merkle-root -i dist_results.json > merkle-proof.generated.json
+```
+6. Compare your proof to the committed merkle tree:
+```sh
+$ diff merkle-proof.generated.json merkle_tree.json
+```
+You will not see any differences!
+
+You can also compare your 'new_dist_list.csv' to the work done by Taliskye in his [Workbook](https://docs.google.com/spreadsheets/d/1dLuFhQ7nPBE0BRVHAZHgfTeNECXz69HAZU3Hrf2QvH0/edit#gid=341897929)
+
+
 # Deploy the Contract
 
 The contract deployment script consumes the `merkle_tree.json` file as the distribution. Make sure this file exists before running the deploy script.
