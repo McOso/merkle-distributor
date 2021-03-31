@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber';
 import { program } from 'commander'
 import fs from 'fs'
 
@@ -54,9 +55,14 @@ function csvToJSON(csv: string){
 }
 
 function convertHexadecimal(amount: number): string{
-    if (isNaN(amount))
-        return '0x00';
-    const num = BigInt(Math.floor(amount)) * BigInt(10) ** BigInt(18) + BigInt(Math.floor((amount - Math.floor(amount)) * (10 ** 18)));
-    const truncated = (num / (BigInt(10) ** BigInt(12))) * (BigInt(10) ** BigInt(12));
-    return `0x${truncated.toString(16)}`;
+    const addSeg = BigNumber.from((Math.floor((amount - Math.floor(amount)) * (10 ** 18))).toString());
+    const num = BigNumber.from(Math.floor(amount)).mul(BigNumber.from(10).pow(18)).add(addSeg);
+    const truncated = (num.div((BigNumber.from(10).pow(12)))).mul(BigNumber.from(10).pow(12));
+    const hex1 = truncated.toHexString();
+    const hex2 = num.toHexString();
+    if (hex1 === '0x00'){
+        return hex2;
+    }else{
+        return hex1;
+    }
 }

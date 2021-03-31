@@ -30,20 +30,16 @@ workbook.xlsx.readFile('Retro-Query-Fork.xlsx').then(() => {
                     const concatReasons = newReasons.value + '|' + retroReasons.value;
                     const distReasons = concatReasons.replace(',','|');
 
-                    if (distAmount > 1){
-                        wsNewDist.addRow({ address: addressCell.toString(), amount: distAmount, reasons: distReasons });
-                    }
+                    wsNewDist.addRow({ address: addressCell.toString(), amount: distAmount, reasons: distReasons });
                 }
             }else {
                 const distAmount = row.getCell(2).value as number;
-                if (distAmount > 1){
-                    wsNewDist.addRow({ address: addressCell.toString(), amount: distAmount, reasons: row.getCell(3).value });
-                }
+                wsNewDist.addRow({ address: addressCell.toString(), amount: distAmount, reasons: row.getCell(3).value });
             }
         }
     });
 
-    workbookTemp.csv.writeFile('NewDistributionList.csv', { sheetName: 'New Distribution' });
+    workbookTemp.csv.writeFile('new_dist_list.csv', { sheetName: 'New Distribution' });
 });
 
 
