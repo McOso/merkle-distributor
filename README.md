@@ -63,3 +63,16 @@ Or you can deploy to mainnet:
 ```sh
 $ yarn deploy mainnet
 ```
+
+# Claiming Tokens - Etherscan
+
+Right now the only way to claim tokens is to interact directly with the MerkleDistributor contract via Etherscan.
+
+## How to Claim - Rinkeby TESTNET
+1. Find your address in the [merkle_tree.json](https://github.com/McOso/merkle-distributor/blob/main/merkle_tree.json) file in this project. You will need the index, amount, and proof values.
+2. Go to the Contract > Write Contract section of the [MerkleDistributor](https://rinkeby.etherscan.io/address/0x2aF8548837180614f147F2Bcd27d4354169F4E8a#writeContract) contract on Etherscan Rinkeby and click 'Connect to Web3' to connect to your wallet.
+3. Click the claim button and fill in the fields with the information you found in Step 1. (Important: For the 'merkleProof (bytes32[])' field enter the proof value you found in Step 1 but with no quotes or spaces.)
+4. Then click 'Write', pay the gas, and you will find the appropriate amount of WEENUS tokens in your wallet.
+
+You can also check to see if an address has already claimed their tokens by going to the Contract > Read Contract section and entering the index of the address into the isClaimed query.
+
