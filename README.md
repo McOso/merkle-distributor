@@ -1,4 +1,4 @@
-# @pooltogether/merkle-distributor - Amended Distribution
+# @pooltogether/merkle-distributor - Amended Uniform Distribution
 
 This project contains the distribution, code, and deployment scripts for the PoolTogether retroactive token claims for the amended distribution. This is needed since not all users received the correct amount of POOL tokens on the initial airdrop. Please visit [POOL Gov](https://gov.pooltogether.com/t/pool-token-airdrop-for-pod-users-who-should-have-qualified/269) for more information.
 
@@ -69,10 +69,18 @@ $ yarn deploy mainnet
 Right now the only way to claim tokens is to interact directly with the MerkleDistributor contract via Etherscan.
 
 ## How to Claim - Rinkeby TESTNET
-1. Find your address in the [merkle_tree.json](https://github.com/McOso/merkle-distributor/blob/main/merkle_tree.json) file in this project. You will need the index, amount, and proof values.
-2. Go to the Contract > Write Contract section of the [MerkleDistributor](https://rinkeby.etherscan.io/address/0x2aF8548837180614f147F2Bcd27d4354169F4E8a#writeContract) contract on Etherscan Rinkeby and click 'Connect to Web3' to connect to your wallet.
+1. Find your address in the [merkle_tree.json](https://github.com/McOso/merkle-distributor/blob/uniform-dist/merkle_tree.json) file in this project. You will need the index, amount, and proof values.
+2. Go to the Contract > Write Contract section of the [MerkleDistributor](https://rinkeby.etherscan.io/address/0x0d9b3830b583A2c9c7191FF9792bEa6c722d3F0E#writeContract) contract on Etherscan Rinkeby and click 'Connect to Web3' to connect to your wallet.
 3. Click the claim button and fill in the fields with the information you found in Step 1. (Important: For the 'merkleProof (bytes32[])' field enter the proof value you found in Step 1 but with no quotes or spaces.)
 4. Then click 'Write', pay the gas, and you will find the appropriate amount of WEENUS tokens in your wallet.
+
+You can also check to see if an address has already claimed their tokens by going to the Contract > Read Contract section and entering the index of the address into the isClaimed query.
+
+## How to Claim - Mainnet (Will update when deployed)
+1. Find your address in the [merkle_tree.json](https://github.com/McOso/merkle-distributor/blob/uniform-dist/merkle_tree.json) file in this project. You will need the index, amount, and proof values.
+2. Go to the Contract > Write Contract section of the [MerkleDistributor - Will update when deployed](/#) contract on Etherscan Rinkeby and click 'Connect to Web3' to connect to your wallet.
+3. Click the claim button and fill in the fields with the information you found in Step 1. (Important: For the 'merkleProof (bytes32[])' field enter the proof value you found in Step 1 but with no quotes or spaces.)
+4. Then click 'Write', pay the gas, and you will find the appropriate amount of POOL tokens in your wallet.
 
 You can also check to see if an address has already claimed their tokens by going to the Contract > Read Contract section and entering the index of the address into the isClaimed query.
 
