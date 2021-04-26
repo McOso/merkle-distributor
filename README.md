@@ -83,3 +83,4 @@ You can also check to see if an address has already claimed their tokens by goin
 4. Then click 'Write', pay the gas, and you will find the appropriate amount of POOL tokens in your wallet.
 
 You can also check to see if an address has already claimed their tokens by going to the Contract > Read Contract section and entering the index of the address into the isClaimed query.
+
