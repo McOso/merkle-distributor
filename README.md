@@ -77,7 +77,7 @@ Right now the only way to claim tokens is to interact directly with the MerkleDi
 
 ## How to Claim - Mainnet
 1. Find your address in the [merkle_tree.json](https://github.com/McOso/merkle-distributor/blob/main/merkle_tree.json) file in this project. You will need the index, amount, and proof values.
-2. Go to the Contract > Write Contract section of the [MerkleDistributor](https://etherscan.io/address/0xD40720AeBCc5506e514CC2fF1E4a7E21C3cb80a4#writeContract) contract on Etherscan Rinkeby and click 'Connect to Web3' to connect to your wallet.
+2. Go to the Contract > Write Contract section of the [MerkleDistributor](https://etherscan.io/address/0xD40720AeBCc5506e514CC2fF1E4a7E21C3cb80a4#writeContract) contract on Etherscan Mainnet and click 'Connect to Web3' to connect to your wallet.
 3. Click the claim button and fill in the fields with the information you found in Step 1. (Important: For the 'merkleProof (bytes32[])' field enter the proof value you found in Step 1 but with no quotes or spaces.)
 4. Then click 'Write', pay the gas, and you will find the appropriate amount of POOL tokens in your wallet.
 
