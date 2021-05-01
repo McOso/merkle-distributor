@@ -66,7 +66,7 @@ $ yarn deploy mainnet
 
 # Claiming Tokens - Etherscan
 
-Right now the only way to claim tokens is to interact directly with the MerkleDistributor contract via Etherscan.
+Claiming tokens via interacting directly with the MerkleDistributor contract via Etherscan.
 
 ## How to Claim - Rinkeby TESTNET
 1. Find your address in the [merkle_tree.json](https://github.com/McOso/merkle-distributor/blob/uniform-dist/merkle_tree.json) file in this project. You will need the index, amount, and proof values.
@@ -82,4 +82,13 @@ Right now the only way to claim tokens is to interact directly with the MerkleDi
 4. Then click 'Write', pay the gas, and you will find the appropriate amount of POOL tokens in your wallet.
 
 You can also check to see if an address has already claimed their tokens by going to the Contract > Read Contract section and entering the index of the address into the isClaimed query.
+
+# Claiming Tokens - UI Claimer
+
+Claiming tokens via DApp.
+
+## How to Claim - Mainnet
+1. Go to [https://merkle-claimer.vercel.app/](https://merkle-claimer.vercel.app/).
+2. Connect your wen browser wallet.
+3. Click claim button to claim your POOL tokens for the connected address.
 
