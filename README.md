@@ -89,6 +89,6 @@ Claiming tokens via DApp.
 
 ## How to Claim - Mainnet
 1. Go to [https://merkle-claimer.vercel.app/](https://merkle-claimer.vercel.app/).
-2. Connect your wen browser wallet.
+2. Connect your web browser wallet.
 3. Click claim button to claim your POOL tokens for the connected address.
 
